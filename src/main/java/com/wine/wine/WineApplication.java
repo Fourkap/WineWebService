@@ -9,6 +9,7 @@ public class WineApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WineApplication.class, args);
+        System.out.println("http://localhost:8889/swagger-ui/");
     }
 
 }

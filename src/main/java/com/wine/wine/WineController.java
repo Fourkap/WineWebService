@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeController {
+public class WineController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/api/home")
     public String homepage()
