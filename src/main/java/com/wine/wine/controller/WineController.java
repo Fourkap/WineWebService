@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/wine")
@@ -20,9 +21,27 @@ public class WineController {
         return wineService.getAllWines();
     }
 
-    @RequestMapping(value = "/addwine", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody()
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<Wine> GetOneWine(@PathVariable Integer id)
+    {
+        return this.wineService.getOneWine(id);
+    }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void DeleteOneWine(@PathVariable Integer id)
+    {
+        this.wineService.deleteOneWine(id);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public void UpdateOneWine(@PathVariable Integer id, @RequestBody Wine wine)
+    {
+        this.wineService.UpdateWine(wine, id);
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody()
     public Wine addNewWine(@RequestBody Wine wine)
     {
         return this.wineService.addWine(wine);
