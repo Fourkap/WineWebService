@@ -32,6 +32,7 @@ public class WineService {
     public Wine UpdateWine(Wine wine, Integer id) {
         this.wineDao.findById(id);
         wine.setId(id);
+        //TODO prendre en compte les anciennes proprieter de l'objet
         return this.wineDao.save(wine);
     }
 
