@@ -22,7 +22,7 @@ public class SwaggerConfig {
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .termsOfServiceUrl("")
                 .version("0.0.1")
-                .contact(new Contact("", "", "alex.kaprielian@gmail.com"))
+                .contact(new Contact("Alexandre Kaprielian", "", "alex.kaprielian@gmail.com"))
                 .build();
     }
     @Bean

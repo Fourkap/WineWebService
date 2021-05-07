@@ -16,6 +16,12 @@ public class Wine {
     @Column(nullable = true, length = 4)
     private String year;
 
+    @Column(nullable = true, length = 255)
+    private String grapes;
+
+    @Column(nullable = true, length = 255)
+    private String country;
+
     public Wine() {
 
     }
@@ -43,5 +49,19 @@ public class Wine {
     public void setYear(String year) {
         this.year = year;
     }
+    public String getGrapes() {
+        return grapes;
+    }
 
+    public void setGrapes(String grapes) {
+        this.grapes = grapes;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
