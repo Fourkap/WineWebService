@@ -3,6 +3,8 @@ package com.wine.wine.service;
 import com.wine.wine.dao.WineDao;
 import com.wine.wine.entity.Wine;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +15,8 @@ public class WineService {
     @Autowired
     WineDao wineDao;
 
-    public List<Wine> getAllWines() {
-        return this.wineDao.findAll();
+    public Page<Wine> getAllWines(Integer page) {
+        return this.wineDao.findAll(PageRequest.of(page,15));
     }
 
     public Optional<Wine> getOneWine(Integer id){
