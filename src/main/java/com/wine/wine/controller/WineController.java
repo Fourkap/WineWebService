@@ -49,5 +49,9 @@ public class WineController {
     public Wine addNewWine(@RequestBody Wine wine) {
         return this.wineService.addWine(wine);
     }
+    @RequestMapping(method = RequestMethod.GET, value = "/getnextid")
+    public Long GetNextId(){
+        return this.wineService.getNextId();
+    }
 }
 
